@@ -70,7 +70,7 @@ The following business metrics were calculated:
 - average order value  
 
 
-## 🛍 Sales Analytics
+## Sales Analytics
 
 ### Product Category Analysis
 
@@ -138,7 +138,7 @@ The project helped identify:
 - seasonality patterns in sales  
 - key sales and revenue trends over time  
 
-## 🛠 Technologies Used
+## Technologies Used
 
 - Python (`pandas`, `numpy`)  
 - Data Visualization (`matplotlib`, `seaborn`)  
