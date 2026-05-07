@@ -1,139 +1,145 @@
-# revenue-and-cost
+#  Revenue and Cost Analysis
 
-## Опис
+##  Description
 
-У цьому проєкті проведено повний цикл аналізу даних продажів міжнародної компанії, яка здійснює діяльність як в офлайн-магазинах, так і через інтернет.
-
-
-## Джерело даних
-
-Проєкт базується на трьох датасетах:
-
-- **events.csv** — дані про продажі за декілька років  
-- **products.csv** — інформація про товари та їх категорії  
-- **countries.csv** — інформація про країни та регіони  
-
-## Аналіз даних
-
-На початковому етапі було:
-
-- досліджено структуру даних
-- описано колонки кожної таблиці
-- визначено ключові поля для об'єднання:
-  - product_id
-  - country_code
+This project presents a full-cycle sales data analysis for an international company operating through both offline stores and online sales channels.
 
 
-## Очищення даних
+##  Data Sources
 
-Проведено повну очистку даних:
+The project is based on three datasets:
 
-### Обробка пропущених значень
-- проаналізовано частку пропусків
-- визначено причини їх виникнення
-- застосовано:
-  - заповнення
-  - видалення (даних, які не вплинуть на поточний аналіз)
-
-### Типи даних
-- перевірено коректність типів
-- виконано перетворення (datetime)
-
-### Додатковий аналіз даних
-- виявлено дублікати
-- усунуто проблеми, які можуть бути викликані різними регістрами
-- перевірено дані на аномалії
+- `events.csv` — sales data collected over several years  
+- `products.csv` — product and category information  
+- `countries.csv` — countries and regions information  
 
 
-## Оформлення кінцевого датафрейму для аналізу
+##  Data Analysis
 
-- об’єднано всі таблиці в один датафрейм
-- видалено зайві колонки
-- перейменовано поля для зручності
-- додано поля, які потрібні для подальших розрахунків
+At the initial stage, the following steps were completed:
 
-
-## Основні метрики
-
-Було розраховано основні бізнес-метрики:
-
-- загальна кількість замовлень
-- загальний дохід (revenue)
-- загальний прибуток (profit)
-- загальні витрати
-- кількість країн
-- кількість категорій
-- середній чек
-
-## Аналітика продажів
-
-### Аналіз за категоріями товарів
-- прораховано витрати, доходи та прибуток у розрізі категорій за допомогою зведеної таблиці
-- проаналізовано витрати, доходи, прибуток та продажі по категоріям у розрізі каналім (онлайн, офлайн) 
-
-### Географічний аналіз
-- продажі, дохід, витрати та прибуток за країнами
-- визначення найбільш та найменш прибуткових країн
+- explored the data structure  
+- described columns in each table  
+- identified key fields used for merging:
+  - `product_id`
+  - `country_code`
 
 
-### Аналіз каналів продажу
-- онлайн та офлайн в розрізі регіонів
-- співвідношення каналів в продажах, прибутку, витратах та доходу
+##  Data Cleaning
+
+A full data cleaning process was performed.
+
+### Missing Values Handling
+
+- analyzed the percentage of missing values  
+- identified possible causes of missing data  
+- applied:
+  - missing value imputation  
+  - removal of data that did not affect the current analysis  
+
+### Data Types
+
+- validated column data types  
+- performed datatype conversions (`datetime`)  
+
+### Additional Data Quality Checks
+
+- identified duplicates  
+- resolved issues caused by inconsistent letter casing  
+- checked data for anomalies and outliers  
 
 
-## Аналіз періоду обробки замовлень
+##  Final Analytical Dataset Preparation
 
-Проаналізовано час між замовленням та відвантаженням:
-
-- за категоріями товарів
-- за країнами
-- за регіонами
-- за способом замовлення (онлайн, офлайн)
-
-Досліджено вплив часу доставки на прибуток.
+- merged all tables into a single dataframe  
+- removed unnecessary columns  
+- renamed fields for better readability  
+- added calculated fields required for further analysis  
 
 
-## Аналіз динаміки
+##  Key Metrics
 
-Проведено аналіз динаміки продажів:
+The following business metrics were calculated:
 
-- загальна динаміка у часі
-- тренди по:
-  - категоріях
-  - країнах (ТОП-10)
-  - регіонах
-
-
-## Продажі по дням тижня
-
-Проаналізовано продажі за днями тижня:
-
-- визначено найприбутковіші дні
-- виявлено можливу сезонність товарів
+- total number of orders  
+- total revenue  
+- total profit  
+- total costs  
+- number of countries  
+- number of product categories  
+- average order value  
 
 
-## Візуалізації
+## 🛍 Sales Analytics
 
-Для аналізу використано візуалізації:
+### Product Category Analysis
 
-- лінійні графіки (динаміка)
-- bar charts (порівняння)
-- scatterplot (для виявлення залежності)
+- analyzed costs, revenue, and profit by product category using pivot tables  
+- analyzed sales, revenue, profit, and costs by category across sales channels (online/offline)  
 
-## Результати
+### Geographic Analysis
 
-- Визначено географію продажів: регіони та країни з найбільшими продажами
-- Визначено найбільш прибуткові категорії
-- Визначено чи є вплив часу доставки на прибуток
-- Проаналізовано сезонність продажів
-- Визначено тенденцію динаміки
+- analyzed sales, revenue, costs, and profit by country  
+- identified the most and least profitable countries  
+
+### Sales Channel Analysis
+
+- analyzed online and offline sales across regions  
+- compared channel contribution to sales, revenue, costs, and profit  
 
 
-## Використано
+##  Order Processing Time Analysis
 
-- Python (pandas, numpy)
-- Visualization (matplotlib, seaborn)
-- Google Colab
+Analyzed the time between order placement and shipment:
 
-## Автор
-Борисова Марина
+- by product category  
+- by country  
+- by region  
+- by sales channel (online/offline)  
+
+Additionally, the impact of delivery time on profit was investigated.
+
+
+##  Trend Analysis
+
+Performed sales trend analysis, including:
+
+- overall sales dynamics over time  
+- trends by:
+  - product categories  
+  - top-10 countries  
+  - regions  
+
+
+##  Sales by Day of Week
+
+Analyzed sales performance by weekday:
+
+- identified the most profitable days  
+- detected possible product seasonality  
+
+
+##  Visualizations
+
+The analysis includes the following visualizations:
+
+- line charts (trend analysis)  
+- bar charts (comparisons)  
+- scatter plots (relationship analysis)  
+
+
+##  Results
+
+The project helped identify:
+
+- regions and countries with the highest sales  
+- the most profitable product categories  
+- the impact of delivery time on profit  
+- seasonality patterns in sales  
+- key sales and revenue trends over time  
+
+## 🛠 Technologies Used
+
+- Python (`pandas`, `numpy`)  
+- Data Visualization (`matplotlib`, `seaborn`)  
+- Google Colab  
